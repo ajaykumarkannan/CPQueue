@@ -286,11 +286,43 @@ namespace CPQueue
         private void button2_Click(object sender, EventArgs e)
         {
             mstring = "";
-            for (int i = 0; i < listView1.Items.Count; i++)
+            if (checkBox2.Checked)
             {
-                if (listView1.Items[i].Selected) mstring += listView1.Items[i].Text;
+                for (int i = listView1.Items.Count - 1; i >= 0; i--)
+                {
+                    if (listView1.Items[i].Selected)
+                    {
+                        mstring += listView1.Items[i].Text;
+                        if (checkBox3.Checked) mstring += " ";
+                        if (checkBox4.Checked) mstring += "\n";
+                    }
+                }
             }
+            else
+            {
+                for (int i = 0; i < listView1.Items.Count; i++)
+                {
+                    if (listView1.Items[i].Selected)
+                    {
+                        mstring += listView1.Items[i].Text;
+                        if (checkBox3.Checked) mstring += " ";
+                        if (checkBox4.Checked) mstring += "\n";
+                    }
+                }
+            }
+            
             Clipboard.SetData(DataFormats.Text, (Object)mstring);
+            
+        }
+
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox3.Checked) checkBox4.Checked = false;
+        }
+
+        private void checkBox4_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox4.Checked) checkBox3.Checked = false;
         }
     }
 }

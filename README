@@ -1,10 +1,2 @@
 This is a clipboard application which aims to provide a queue & stack function. 
-
-Changelog: 
-0.6 - Added autoscroll and move item to next on delete instead of to top/bottom
-0.5 - Added Stack functionality
-0.4 - Hot keys to navigate through queue
-0.3 - Added hotkey. Acts like Queue now
-0.2.1 - Fixed last issue
-0.2 - Added monitoring but now when retrieving, it adds again
-0.1 - Fully working except monitoring
+It now supports multi paste. You can select multiple items using the mouse and the shift or control key. It will paste in the order present in the list top to bottom (If queue) or bottom to top (If stack). 

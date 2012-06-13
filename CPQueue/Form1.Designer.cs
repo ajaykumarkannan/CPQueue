@@ -69,6 +69,8 @@ namespace CPQueue
             this.label2 = new System.Windows.Forms.Label();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -99,7 +101,7 @@ namespace CPQueue
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(482, 234);
+            this.button1.Location = new System.Drawing.Point(462, 232);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(87, 27);
             this.button1.TabIndex = 10;
@@ -167,7 +169,7 @@ namespace CPQueue
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(359, 234);
+            this.button3.Location = new System.Drawing.Point(339, 232);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(117, 27);
             this.button3.TabIndex = 14;
@@ -197,7 +199,7 @@ namespace CPQueue
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(359, 267);
+            this.button2.Location = new System.Drawing.Point(339, 265);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(88, 27);
             this.button2.TabIndex = 17;
@@ -205,11 +207,35 @@ namespace CPQueue
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(447, 270);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(118, 19);
+            this.checkBox3.TabIndex = 18;
+            this.checkBox3.Text = "Space Separator";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Location = new System.Drawing.Point(447, 295);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(128, 19);
+            this.checkBox4.TabIndex = 19;
+            this.checkBox4.Text = "Newline Separator";
+            this.checkBox4.UseVisualStyleBackColor = true;
+            this.checkBox4.CheckedChanged += new System.EventHandler(this.checkBox4_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(582, 324);
+            this.Controls.Add(this.checkBox4);
+            this.Controls.Add(this.checkBox3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.label2);
@@ -249,6 +275,8 @@ namespace CPQueue
         private Label label2;
         private CheckBox checkBox2;
         private Button button2;
+        private CheckBox checkBox3;
+        private CheckBox checkBox4;
     }
 }
 
