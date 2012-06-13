@@ -34,11 +34,9 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.MaximumSize = new System.Drawing.Size(460, 260);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(460, 215);
             this.label1.TabIndex = 0;
             this.label1.Text = "label1";
             // 
@@ -64,7 +62,6 @@
             this.Text = "Help";
             this.TopMost = true;
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
