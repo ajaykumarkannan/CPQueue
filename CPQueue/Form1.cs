@@ -42,6 +42,7 @@ namespace CPQueue
             RegisterHotKey(this.Handle, this.GetType().GetHashCode(), 2, (int)'D');
             // UnregisterHotKey(this.Handle, this.GetType().GetHashCode());
             label2.Text = "Shortcuts: Ctrl-B: Delete selected, Ctrl-E: Move up, Ctrl-D: Move Down";
+            checkBox2.Checked = true;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -225,23 +226,21 @@ namespace CPQueue
         {
             if (listView1.Items.Count > 0)
             {
-                listView1.Items.RemoveAt(selectedItem);
+                for (int i = 0; i < listView1.Items.Count; i++)
+                {
+                    if (listView1.Items[i].Selected)
+                    {
+                        listView1.Items.RemoveAt(selectedItem);
+                        i--;
+                    }
+                }
                 if (listView1.Items.Count > 0)
                 {
-                    if (!checkBox2.Checked)
-                    {
-                        if (selectedItem < listView1.Items.Count - 1) ; // Stays the same
-                        else selectedItem--;
-                    }
-                    else
-                    {
-                        if (selectedItem > 0) selectedItem--;
-                        // else stays the same
-                    }
-
+                    if (!checkBox2.Checked) selectedItem = 0;
+                    else selectedItem = listView1.Items.Count - 1;
                     loadItem();
-                    
                 }
+                else selectedItem = 0;
             }
         }
 
@@ -257,7 +256,8 @@ namespace CPQueue
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
-            listView1.Items[selectedItem].Selected = false; 
+            if(listView1.Items.Count > 0) listView1.Items[selectedItem].Selected = false; 
+
             if (checkBox2.Checked) selectedItem = listView1.Items.Count - 1;
             else selectedItem = 0;
             loadItem();
@@ -266,12 +266,16 @@ namespace CPQueue
 
         private void loadItem()
         {
-            if (selectedItem < 0) selectedItem = 0;
-            else if (selectedItem >= listView1.Items.Count) selectedItem = listView1.Items.Count - 1;
-            mstring = listView1.Items[selectedItem].Text;
-            Clipboard.SetData(DataFormats.Text, (Object)mstring);
-            listView1.Items[selectedItem].Selected = true;
-            listView1.EnsureVisible(selectedItem);
+            if (listView1.Items.Count > 0)
+            {
+                if (selectedItem < 0) selectedItem = 0;
+                else if (selectedItem >= listView1.Items.Count) selectedItem = listView1.Items.Count - 1;
+                mstring = listView1.Items[selectedItem].Text;
+                Clipboard.SetData(DataFormats.Text, (Object)mstring);
+                listView1.Items[selectedItem].Selected = true;
+                listView1.EnsureVisible(selectedItem);
+            }
+            else selectedItem = 0;
         }
     }
 }

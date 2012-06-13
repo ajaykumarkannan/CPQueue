@@ -1,3 +1,5 @@
+This is a clipboard application which aims to provide a queue & stack function. 
+
 Changelog: 
 0.6 - Added autoscroll and move item to next on delete instead of to top/bottom
 0.5 - Added Stack functionality
