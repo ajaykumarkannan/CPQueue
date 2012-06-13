@@ -189,23 +189,26 @@ namespace CPQueue
 
                 if (iData.GetDataPresent(DataFormats.Text))
                 {
-                    mstring = (string)iData.GetData(DataFormats.Text);
-                    ListViewItem tLVI = listView1.FindItemWithText(mstring);
-                    if (tLVI == null || tLVI.Text != mstring)
+                    if (mstring != (string)iData.GetData(DataFormats.Text))
                     {
-                        ListViewItem lvi = new ListViewItem(mstring);
-                        lvi.SubItems.Add(DateTime.Now.ToString("HH:mm:ss tt"));
-                        listView1.Items.Add(lvi);
-                        listView1.Items[selectedItem].Selected = false; 
-                        if (!checkBox2.Checked)
+                        mstring = (string)iData.GetData(DataFormats.Text);
+                        ListViewItem tLVI = listView1.FindItemWithText(mstring);
+                        if (tLVI == null || tLVI.Text != mstring)
                         {
-                            selectedItem = 0;
-                            loadItem();
-                        }
-                        else
-                        {
-                            selectedItem = listView1.Items.Count - 1;
-                            loadItem();
+                            ListViewItem lvi = new ListViewItem(mstring);
+                            lvi.SubItems.Add(DateTime.Now.ToString("HH:mm:ss tt"));
+                            listView1.Items.Add(lvi);
+                            listView1.Items[selectedItem].Selected = false;
+                            if (!checkBox2.Checked)
+                            {
+                                selectedItem = 0;
+                                loadItem();
+                            }
+                            else
+                            {
+                                selectedItem = listView1.Items.Count - 1;
+                                loadItem();
+                            }
                         }
                     }
                 }
@@ -228,6 +231,8 @@ namespace CPQueue
             {
                 for (int i = 0; i < listView1.Items.Count; i++)
                 {
+                    if (i >= listView1.Items.Count) break;
+                    
                     if (listView1.Items[i].Selected)
                     {
                         listView1.Items.RemoveAt(selectedItem);
@@ -276,6 +281,16 @@ namespace CPQueue
                 listView1.EnsureVisible(selectedItem);
             }
             else selectedItem = 0;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            mstring = "";
+            for (int i = 0; i < listView1.Items.Count; i++)
+            {
+                if (listView1.Items[i].Selected) mstring += listView1.Items[i].Text;
+            }
+            Clipboard.SetData(DataFormats.Text, (Object)mstring);
         }
     }
 }
