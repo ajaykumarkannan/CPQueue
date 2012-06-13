@@ -32,7 +32,7 @@ namespace CPQueue
             nextClipboardViewer = (IntPtr)SetClipboardViewer((int)this.Handle);
             this.listView1.Clear();
             this.listView1.Columns.Add("Text", 450);
-            this.listView1.Columns.Add("Added", 80);
+            this.listView1.Columns.Add("Added", 90);
             this.listView1.HideSelection = false;
             
 
@@ -105,7 +105,7 @@ namespace CPQueue
             listView1.Clear();
             this.listView1.Columns.Add("Text", 450);
             this.listView1.Columns.Add("Added", 80);
-            selectedItem = -1;
+            selectedItem = 0;
 
         }
 
@@ -144,7 +144,7 @@ namespace CPQueue
                     }
                     else if (key == Keys.E)
                     {
-                        if (selectedItem > 0)
+                        if (selectedItem > 0 && selectedItem < listView1.Items.Count)
                         {
                             listView1.Items[selectedItem].Selected = false;
                             selectedItem--;
@@ -153,7 +153,7 @@ namespace CPQueue
                     }
                     else if (key == Keys.D)
                     {
-                        if (selectedItem < listView1.Items.Count - 1)
+                        if (selectedItem >=0 && selectedItem < listView1.Items.Count - 1)
                         {
                             listView1.Items[selectedItem].Selected = false;
                             selectedItem++;
@@ -266,6 +266,8 @@ namespace CPQueue
 
         private void loadItem()
         {
+            if (selectedItem < 0) selectedItem = 0;
+            else if (selectedItem >= listView1.Items.Count) selectedItem = listView1.Items.Count - 1;
             mstring = listView1.Items[selectedItem].Text;
             Clipboard.SetData(DataFormats.Text, (Object)mstring);
             listView1.Items[selectedItem].Selected = true;

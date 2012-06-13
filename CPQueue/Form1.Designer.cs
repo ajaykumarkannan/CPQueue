@@ -79,7 +79,7 @@ namespace CPQueue
             this.listView1.LabelEdit = true;
             this.listView1.Location = new System.Drawing.Point(12, 61);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(531, 170);
+            this.listView1.Size = new System.Drawing.Size(557, 170);
             this.listView1.TabIndex = 8;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -98,7 +98,7 @@ namespace CPQueue
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(456, 234);
+            this.button1.Location = new System.Drawing.Point(482, 234);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(87, 27);
             this.button1.TabIndex = 10;
@@ -124,7 +124,7 @@ namespace CPQueue
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(560, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(582, 24);
             this.menuStrip1.TabIndex = 12;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -166,7 +166,7 @@ namespace CPQueue
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(333, 234);
+            this.button3.Location = new System.Drawing.Point(359, 234);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(117, 27);
             this.button3.TabIndex = 14;
@@ -198,7 +198,7 @@ namespace CPQueue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(560, 324);
+            this.ClientSize = new System.Drawing.Size(582, 324);
             this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button3);
