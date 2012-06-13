@@ -33,3 +33,5 @@ C:\Users\ajaykuma\Dropbox\Work\Application_Development\CPQueue\CPQueue\obj\Debug
 C:\Users\ajaykuma\Dropbox\Work\Application_Development\CPQueue\CPQueue\obj\Debug\CPQueue.csproj.GenerateResource.Cache
 C:\Users\ajaykuma\Dropbox\Work\Application_Development\CPQueue\CPQueue\obj\Debug\CPQueue.exe.manifest
 C:\Users\ajaykuma\Dropbox\Work\Application_Development\CPQueue\CPQueue\obj\Debug\CPQueue.application
+C:\Users\ajaykuma\Dropbox\Work\Application_Development\CPQueue\CPQueue\obj\Debug\CPQueue.Help.resources
+C:\Users\ajaykuma\Dropbox\Work\Application_Development\CPQueue\CPQueue\obj\Debug\CPQueue.AboutForm.resources

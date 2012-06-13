@@ -251,7 +251,8 @@ namespace CPQueue
 
         private void viewHelpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Help helpForm = new Help();
+            helpForm.ShowDialog();
         }
 
         private void label1_Click_1(object sender, EventArgs e)
@@ -323,6 +324,17 @@ namespace CPQueue
         private void checkBox4_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox4.Checked) checkBox3.Checked = false;
+        }
+
+        private void optionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutForm aboutForm1 = new AboutForm();
+            aboutForm1.ShowDialog();
         }
     }
 }
