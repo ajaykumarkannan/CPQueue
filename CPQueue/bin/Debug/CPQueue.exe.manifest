@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CPQueue.exe" size="22528">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CPQueue.exe" size="24064">
       <assemblyIdentity name="CPQueue" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>1NPGKbeSetUgqgY1UQCMybLFaqajiEgfA5jLll1EcTU=</dsig:DigestValue>
+        <dsig:DigestValue>VH9LwngeddHaoF5MTO9PR7qM7XYpn4Ci8ao6Vu+Trao=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

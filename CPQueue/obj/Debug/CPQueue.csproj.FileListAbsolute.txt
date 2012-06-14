@@ -34,3 +34,4 @@ C:\Users\ajaykuma\Dropbox\Work\Application_Development\CPQueue\CPQueue\obj\Debug
 C:\Users\ajaykuma\Dropbox\Work\Application_Development\CPQueue\CPQueue\obj\Debug\CPQueue.application
 C:\Users\ajaykuma\Dropbox\Work\Application_Development\CPQueue\CPQueue\obj\Debug\CPQueue.exe
 C:\Users\ajaykuma\Dropbox\Work\Application_Development\CPQueue\CPQueue\obj\Debug\CPQueue.pdb
+C:\Users\ajaykuma\Dropbox\Work\Application_Development\CPQueue\CPQueue\obj\Debug\CPQueue.csprojResolveAssemblyReference.cache

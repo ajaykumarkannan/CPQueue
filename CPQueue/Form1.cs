@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Collections;
 using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
+using System.IO;
 
 
 // Clipboard Monitor Code adapted from: http://www.codeguru.com/columns/dotnettips/article.php/c7315/Monitoring-Clipboard-Activity-in-C.htm#overview
@@ -365,6 +366,45 @@ namespace CPQueue
         {
             AboutForm aboutForm1 = new AboutForm();
             aboutForm1.ShowDialog();
+        }
+
+        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            listView1.Clear();
+            this.listView1.Columns.Add("Text", 450);
+            this.listView1.Columns.Add("Added", 80);
+            selectedItem = 0;
+        }
+
+        // Write to Text
+        private void textToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            saveFD.Title = "Choose where you want to save the file to.";
+            saveFD.InitialDirectory = System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            saveFD.FileName = "";
+            saveFD.Filter = "Text files (*.txt)|*.txt|All files|*.*";
+            saveFD.FilterIndex = 1; ;
+
+            if (saveFD.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                        string chosenFile = saveFD.FileName;
+                        TextWriter tw = new StreamWriter(chosenFile);
+                        if (tw != null)
+                        {
+                            for (int i = 0; i < listView1.Items.Count; i++)
+                            {
+                                tw.WriteLine(listView1.Items[i].Text);
+                            }
+                            tw.Close();
+                        }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: Could not read file from disk. Original error: " + ex.Message);
+                }
+            }
         }
     }
 }
