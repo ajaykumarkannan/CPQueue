@@ -11,6 +11,7 @@ using System.Windows;
 using System.Windows.Input;
 using System.Collections;
 using System.Runtime.InteropServices;
+using System.Text.RegularExpressions;
 
 
 // Clipboard Monitor Code adapted from: http://www.codeguru.com/columns/dotnettips/article.php/c7315/Monitoring-Clipboard-Activity-in-C.htm#overview
@@ -41,7 +42,6 @@ namespace CPQueue
             RegisterHotKey(this.Handle, this.GetType().GetHashCode(), 2, (int)'E');
             RegisterHotKey(this.Handle, this.GetType().GetHashCode(), 2, (int)'D');
             // UnregisterHotKey(this.Handle, this.GetType().GetHashCode());
-            label2.Text = "Shortcuts: Ctrl-B: Delete selected, Ctrl-E: Move up, Ctrl-D: Move Down";
             checkBox2.Checked = true;
         }
 
@@ -195,9 +195,39 @@ namespace CPQueue
                         ListViewItem tLVI = listView1.FindItemWithText(mstring);
                         if (tLVI == null || tLVI.Text != mstring)
                         {
-                            ListViewItem lvi = new ListViewItem(mstring);
-                            lvi.SubItems.Add(DateTime.Now.ToString("HH:mm:ss tt"));
-                            listView1.Items.Add(lvi);
+                            // Default delimiter \r\n
+
+                            if (splitBox.Checked)
+                            {
+                                string[] substrings;
+
+                                if (!checkBox3.Checked)
+                                {
+                                    substrings = Regex.Split(mstring, "\r\n");
+                                }
+                                else
+                                {
+                                    substrings = mstring.Split(' ');
+                                }
+
+                                foreach (string line in substrings)
+                                {
+                                    if (line.Length > 0)
+                                    {
+                                        ListViewItem lvi = new ListViewItem(line);
+                                        lvi.SubItems.Add(DateTime.Now.ToString("HH:mm:ss tt"));
+                                        listView1.Items.Add(lvi);
+                                    }
+                                }
+
+                            }
+                            else
+                            {
+                                ListViewItem lvi = new ListViewItem(mstring);
+                                lvi.SubItems.Add(DateTime.Now.ToString("HH:mm:ss tt"));
+                                listView1.Items.Add(lvi);
+                            }
+
                             listView1.Items[selectedItem].Selected = false;
                             if (!checkBox2.Checked)
                             {

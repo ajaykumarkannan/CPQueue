@@ -71,6 +71,7 @@ namespace CPQueue
             this.button2 = new System.Windows.Forms.Button();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.splitBox = new System.Windows.Forms.CheckBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -165,7 +166,7 @@ namespace CPQueue
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -181,12 +182,11 @@ namespace CPQueue
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 300);
+            this.label2.Location = new System.Drawing.Point(9, 287);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 15);
+            this.label2.Size = new System.Drawing.Size(302, 32);
             this.label2.TabIndex = 15;
-            this.label2.Text = "label2";
+            this.label2.Text = "Shortcuts: Ctrl-B: Delete selected, Ctrl-E: Move up, Ctrl-D: Move Down";
             // 
             // checkBox2
             // 
@@ -231,11 +231,22 @@ namespace CPQueue
             this.checkBox4.UseVisualStyleBackColor = true;
             this.checkBox4.CheckedChanged += new System.EventHandler(this.checkBox4_CheckedChanged);
             // 
+            // splitBox
+            // 
+            this.splitBox.AutoSize = true;
+            this.splitBox.Location = new System.Drawing.Point(339, 300);
+            this.splitBox.Name = "splitBox";
+            this.splitBox.Size = new System.Drawing.Size(80, 19);
+            this.splitBox.TabIndex = 20;
+            this.splitBox.Text = "Split Copy";
+            this.splitBox.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(582, 324);
+            this.Controls.Add(this.splitBox);
             this.Controls.Add(this.checkBox4);
             this.Controls.Add(this.checkBox3);
             this.Controls.Add(this.button2);
@@ -279,6 +290,7 @@ namespace CPQueue
         private Button button2;
         private CheckBox checkBox3;
         private CheckBox checkBox4;
+        private CheckBox splitBox;
     }
 }
 
