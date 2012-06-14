@@ -1,4 +1,5 @@
 History Prior to git
+0.7.3 - Added import and export from text files. Delimiter newline
 0.7.2 - Added split copy
 0.7.1 - Some new features. Check commits
 0.6 - Added autoscroll and move item to next on delete instead of to top/bottom
