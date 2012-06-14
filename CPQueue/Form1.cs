@@ -230,6 +230,7 @@ namespace CPQueue
                             }
 
                             listView1.Items[selectedItem].Selected = false;
+
                             if (!checkBox2.Checked)
                             {
                                 selectedItem = 0;
@@ -399,6 +400,48 @@ namespace CPQueue
                             }
                             tw.Close();
                         }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: Could not read file from disk. Original error: " + ex.Message);
+                }
+            }
+        }
+
+        private void textToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            openFD.Title = "Choose the file you wish to import.";
+            openFD.InitialDirectory = System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            openFD.FileName = "";
+            openFD.Filter = "Text files (*.txt)|*.txt|All files|*.*";
+            openFD.FilterIndex = 1; ;
+
+            if (openFD.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    string chosenFile = openFD.FileName;
+                    TextReader tr = new StreamReader(chosenFile);
+                    if (tr != null)
+                    {
+                        while ((mstring = tr.ReadLine()) != null)
+                        {
+                            ListViewItem lvi = new ListViewItem(mstring);
+                            lvi.SubItems.Add(DateTime.Now.ToString("HH:mm:ss tt"));
+                            listView1.Items.Add(lvi);
+                        }
+                    }
+
+                    if (!checkBox2.Checked)
+                    {
+                        selectedItem = 0;
+                        loadItem();
+                    }
+                    else
+                    {
+                        selectedItem = listView1.Items.Count - 1;
+                        loadItem();
+                    }
                 }
                 catch (Exception ex)
                 {
