@@ -410,5 +410,51 @@ namespace CPQueue
                 }
             }
         }
+
+        private void miniMode_CheckedChanged(object sender, EventArgs e)
+        {
+            if (miniMode.Checked)
+            {
+                checkBox1.Hide();
+                checkBox2.Hide();
+                checkBox3.Hide();
+                checkBox4.Hide();
+                label2.Hide();
+                button1.Hide();
+                button2.Hide();
+                button3.Hide();
+                splitBox.Hide();
+                menuStrip1.Hide();
+                miniMode.Location = new Point(0, 0);
+                listView1.Columns[0].Width = 125;
+                listView1.Columns[1].Width = 0;
+                listView1.Width = 150;
+                listView1.Height = 150;
+                listView1.Location = new Point(0, 20);
+                this.Width = 150;
+                this.Height = 200;
+            }
+            else
+            {
+                checkBox1.Show();
+                checkBox2.Show();
+                checkBox3.Show();
+                checkBox4.Show();
+                label2.Show();
+                button1.Show();
+                button2.Show();
+                button3.Show();
+                splitBox.Show();
+                menuStrip1.Show();
+                miniMode.Location = new Point(440, 2);
+                listView1.Columns[0].Width = itemSize;
+                listView1.Columns[1].Width = timeSize;
+                listView1.Width = 513;
+                listView1.Height = 170;
+                listView1.Location = new Point(12, 27);
+                this.Width = 551;
+                this.Height = 330;
+            }
+        }
     }
 }

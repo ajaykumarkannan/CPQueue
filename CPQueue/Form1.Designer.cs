@@ -77,6 +77,7 @@ namespace CPQueue
             this.splitBox = new System.Windows.Forms.CheckBox();
             this.saveFD = new System.Windows.Forms.SaveFileDialog();
             this.openFD = new System.Windows.Forms.OpenFileDialog();
+            this.miniMode = new System.Windows.Forms.CheckBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -138,7 +139,7 @@ namespace CPQueue
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.settingsToolStripMenuItem.Text = "Clear";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
@@ -147,7 +148,7 @@ namespace CPQueue
             this.exportToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.textToolStripMenuItem});
             this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
-            this.exportToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.exportToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exportToolStripMenuItem.Text = "Export";
             // 
             // textToolStripMenuItem
@@ -162,7 +163,7 @@ namespace CPQueue
             this.importToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.textToolStripMenuItem1});
             this.importToolStripMenuItem.Name = "importToolStripMenuItem";
-            this.importToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.importToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.importToolStripMenuItem.Text = "Import";
             // 
             // textToolStripMenuItem1
@@ -270,11 +271,23 @@ namespace CPQueue
             // 
             this.openFD.FileName = "openFD";
             // 
+            // miniMode
+            // 
+            this.miniMode.AutoSize = true;
+            this.miniMode.Location = new System.Drawing.Point(440, 2);
+            this.miniMode.Name = "miniMode";
+            this.miniMode.Size = new System.Drawing.Size(85, 19);
+            this.miniMode.TabIndex = 21;
+            this.miniMode.Text = "Mini Mode";
+            this.miniMode.UseVisualStyleBackColor = true;
+            this.miniMode.CheckedChanged += new System.EventHandler(this.miniMode_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(535, 292);
+            this.Controls.Add(this.miniMode);
             this.Controls.Add(this.splitBox);
             this.Controls.Add(this.checkBox4);
             this.Controls.Add(this.checkBox3);
@@ -323,6 +336,7 @@ namespace CPQueue
         private ToolStripMenuItem importToolStripMenuItem;
         private ToolStripMenuItem textToolStripMenuItem1;
         private OpenFileDialog openFD;
+        private CheckBox miniMode;
     }
 }
 
