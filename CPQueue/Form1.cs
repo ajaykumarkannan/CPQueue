@@ -28,6 +28,7 @@ namespace CPQueue
         IntPtr nextClipboardViewer;
         int selectedItem = 0;
         
+        // Constructor
         public Form1()
         {
             InitializeComponent();
@@ -45,30 +46,6 @@ namespace CPQueue
             // UnregisterHotKey(this.Handle, this.GetType().GetHashCode());
             checkBox2.Checked = true;
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        /*
-        // Add button
-        private void button2_Click(object sender, EventArgs e)
-        {
-            mstring = Clipboard.GetText();
-
-            // Insert ListView Code here
-            ListViewItem lvi = new ListViewItem(mstring);
-            lvi.SubItems.Add(DateTime.Now.ToString("HH:mm:ss tt"));
-            listView1.Items.Add(lvi);
-
-        }
-        */
 
         void myListview_MouseDown(Object sender, MouseEventArgs e)
         {
@@ -91,15 +68,11 @@ namespace CPQueue
                 }
                 catch (NullReferenceException ex)
                 {
-                    ; // Do nothing
+                    MessageBox.Show(ex.ToString()); 
                 }
             }
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
 
         // Clear Button
         private void button1_Click(object sender, EventArgs e)
@@ -131,13 +104,11 @@ namespace CPQueue
                             {
                                 if (!checkBox2.Checked)
                                 {
-                                    if (selectedItem < listView1.Items.Count - 1) ; // Stays the same
-                                    else selectedItem--;
+                                    if (selectedItem >= listView1.Items.Count - 1) selectedItem = listView1.Items.Count - 1;
                                 }
                                 else
                                 {
                                     if (selectedItem > 0) selectedItem--;
-                                    // else stays the same
                                 }
 
                                 loadItem();
@@ -251,10 +222,6 @@ namespace CPQueue
             }
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
 
         // Remove selected button
         private void button3_Click(object sender, EventArgs e)
@@ -285,11 +252,6 @@ namespace CPQueue
         {
             Help helpForm = new Help();
             helpForm.ShowDialog();
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
         }
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
@@ -356,11 +318,6 @@ namespace CPQueue
         private void checkBox4_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox4.Checked) checkBox3.Checked = false;
-        }
-
-        private void optionsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
