@@ -78,6 +78,7 @@ namespace CPQueue
             this.saveFD = new System.Windows.Forms.SaveFileDialog();
             this.openFD = new System.Windows.Forms.OpenFileDialog();
             this.miniMode = new System.Windows.Forms.CheckBox();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -131,7 +132,8 @@ namespace CPQueue
             this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.settingsToolStripMenuItem,
             this.exportToolStripMenuItem,
-            this.importToolStripMenuItem});
+            this.importToolStripMenuItem,
+            this.exitToolStripMenuItem});
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
             this.optionsToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.optionsToolStripMenuItem.Text = "File";
@@ -154,7 +156,7 @@ namespace CPQueue
             // textToolStripMenuItem
             // 
             this.textToolStripMenuItem.Name = "textToolStripMenuItem";
-            this.textToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
+            this.textToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.textToolStripMenuItem.Text = "Text";
             this.textToolStripMenuItem.Click += new System.EventHandler(this.textToolStripMenuItem_Click);
             // 
@@ -282,6 +284,13 @@ namespace CPQueue
             this.miniMode.UseVisualStyleBackColor = true;
             this.miniMode.CheckedChanged += new System.EventHandler(this.miniMode_CheckedChanged);
             // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -337,6 +346,7 @@ namespace CPQueue
         private ToolStripMenuItem textToolStripMenuItem1;
         private OpenFileDialog openFD;
         private CheckBox miniMode;
+        private ToolStripMenuItem exitToolStripMenuItem;
     }
 }
 

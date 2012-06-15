@@ -24,6 +24,7 @@ namespace CPQueue
     {
 
         string mstring;
+        System.Drawing.Rectangle screenRectangle; 
 
         IntPtr nextClipboardViewer;
         int selectedItem = 0;
@@ -49,6 +50,8 @@ namespace CPQueue
             RegisterHotKey(this.Handle, this.GetType().GetHashCode(), 2, (int)'D');
             // UnregisterHotKey(this.Handle, this.GetType().GetHashCode());
             checkBox2.Checked = true;
+            screenRectangle = System.Windows.Forms.Screen.PrimaryScreen.WorkingArea;
+            this.Location = new Point(screenRectangle.Width - this.Width, screenRectangle.Height - this.Height);
         }
 
         void myListview_MouseDown(Object sender, MouseEventArgs e)
@@ -433,6 +436,7 @@ namespace CPQueue
                 listView1.Location = new Point(0, 20);
                 this.Width = 150;
                 this.Height = 200;
+                this.Location = new Point(screenRectangle.Width - this.Width, screenRectangle.Height - this.Height);
             }
             else
             {
@@ -454,7 +458,13 @@ namespace CPQueue
                 listView1.Location = new Point(12, 27);
                 this.Width = 551;
                 this.Height = 330;
+                this.Location = new Point(screenRectangle.Width - this.Width, screenRectangle.Height - this.Height);
             }
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
