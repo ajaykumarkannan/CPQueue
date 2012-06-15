@@ -1,3 +1,4 @@
 Add multiline in listview. 
 Custom Shortcuts
 Custom delimiters
+Allow copying of images and files?
