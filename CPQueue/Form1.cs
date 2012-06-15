@@ -73,9 +73,9 @@ namespace CPQueue
                         selectedItem = htInfo.Item.Index;
                     }
                 }
-                catch (NullReferenceException ex)
+                catch (NullReferenceException)
                 {
-                    MessageBox.Show(ex.ToString()); 
+                    // MessageBox.Show(ex.ToString()); 
                 }
             }
         }
