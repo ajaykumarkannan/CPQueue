@@ -27,6 +27,10 @@ namespace CPQueue
 
         IntPtr nextClipboardViewer;
         int selectedItem = 0;
+
+        // Column Sizes
+        int itemSize = 400;
+        int timeSize = 90;
         
         // Constructor
         public Form1()
@@ -34,8 +38,8 @@ namespace CPQueue
             InitializeComponent();
             nextClipboardViewer = (IntPtr)SetClipboardViewer((int)this.Handle);
             this.listView1.Clear();
-            this.listView1.Columns.Add("Text", 450);
-            this.listView1.Columns.Add("Added", 90);
+            this.listView1.Columns.Add("Text", itemSize);
+            this.listView1.Columns.Add("Added", timeSize);
             this.listView1.HideSelection = false;
             
 
@@ -78,7 +82,7 @@ namespace CPQueue
         private void button1_Click(object sender, EventArgs e)
         {
             listView1.Clear();
-            this.listView1.Columns.Add("Text", 450);
+            this.listView1.Columns.Add("Text", 400);
             this.listView1.Columns.Add("Added", 80);
             selectedItem = 0;
 
@@ -329,8 +333,8 @@ namespace CPQueue
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             listView1.Clear();
-            this.listView1.Columns.Add("Text", 450);
-            this.listView1.Columns.Add("Added", 80);
+            this.listView1.Columns.Add("Text", itemSize);
+            this.listView1.Columns.Add("Added", timeSize);
             selectedItem = 0;
         }
 

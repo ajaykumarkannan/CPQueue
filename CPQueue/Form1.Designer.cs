@@ -58,7 +58,6 @@ namespace CPQueue
             this.listView1 = new System.Windows.Forms.ListView();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -87,9 +86,9 @@ namespace CPQueue
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
             this.listView1.LabelEdit = true;
-            this.listView1.Location = new System.Drawing.Point(12, 61);
+            this.listView1.Location = new System.Drawing.Point(12, 27);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(557, 170);
+            this.listView1.Size = new System.Drawing.Size(513, 170);
             this.listView1.TabIndex = 8;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -98,7 +97,7 @@ namespace CPQueue
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(12, 239);
+            this.checkBox1.Location = new System.Drawing.Point(12, 205);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(236, 19);
             this.checkBox1.TabIndex = 9;
@@ -107,23 +106,13 @@ namespace CPQueue
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(462, 232);
+            this.button1.Location = new System.Drawing.Point(412, 197);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(87, 27);
             this.button1.TabIndex = 10;
             this.button1.Text = "Clear";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(525, 15);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "This application will copy text automatically. To load one of the items into the " +
-    "buffer, click it once.";
             // 
             // menuStrip1
             // 
@@ -132,7 +121,7 @@ namespace CPQueue
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(582, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(535, 24);
             this.menuStrip1.TabIndex = 12;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -208,7 +197,7 @@ namespace CPQueue
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(339, 232);
+            this.button3.Location = new System.Drawing.Point(289, 197);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(117, 27);
             this.button3.TabIndex = 14;
@@ -218,7 +207,7 @@ namespace CPQueue
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(9, 287);
+            this.label2.Location = new System.Drawing.Point(9, 253);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(302, 32);
             this.label2.TabIndex = 15;
@@ -227,7 +216,7 @@ namespace CPQueue
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(12, 265);
+            this.checkBox2.Location = new System.Drawing.Point(12, 231);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(215, 19);
             this.checkBox2.TabIndex = 16;
@@ -237,7 +226,7 @@ namespace CPQueue
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(339, 265);
+            this.button2.Location = new System.Drawing.Point(289, 230);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(88, 27);
             this.button2.TabIndex = 17;
@@ -248,7 +237,7 @@ namespace CPQueue
             // checkBox3
             // 
             this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(447, 270);
+            this.checkBox3.Location = new System.Drawing.Point(397, 235);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(118, 19);
             this.checkBox3.TabIndex = 18;
@@ -259,7 +248,7 @@ namespace CPQueue
             // checkBox4
             // 
             this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(447, 295);
+            this.checkBox4.Location = new System.Drawing.Point(397, 260);
             this.checkBox4.Name = "checkBox4";
             this.checkBox4.Size = new System.Drawing.Size(128, 19);
             this.checkBox4.TabIndex = 19;
@@ -270,7 +259,7 @@ namespace CPQueue
             // splitBox
             // 
             this.splitBox.AutoSize = true;
-            this.splitBox.Location = new System.Drawing.Point(339, 300);
+            this.splitBox.Location = new System.Drawing.Point(289, 265);
             this.splitBox.Name = "splitBox";
             this.splitBox.Size = new System.Drawing.Size(80, 19);
             this.splitBox.TabIndex = 20;
@@ -285,7 +274,7 @@ namespace CPQueue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(582, 324);
+            this.ClientSize = new System.Drawing.Size(535, 292);
             this.Controls.Add(this.splitBox);
             this.Controls.Add(this.checkBox4);
             this.Controls.Add(this.checkBox3);
@@ -293,7 +282,6 @@ namespace CPQueue
             this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.listView1);
@@ -316,7 +304,6 @@ namespace CPQueue
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Button button1;
-        private Label label1;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem optionsToolStripMenuItem;
         private ToolStripMenuItem settingsToolStripMenuItem;

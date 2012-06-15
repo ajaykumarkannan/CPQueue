@@ -17,7 +17,7 @@ namespace CPQueue
             InitializeComponent();
             string mstring = "This is a clipboard stack/queue application.\n";
             mstring += "\nItems will be copied automatically when you Control-C from within any application. It will then act as a first in last out by defaut and and as a first in last out when \"Tick to Use Stack instead of Queue\" is unchecked. ";
-            mstring += "To remove the currently selected item, use Control-B. Use Control-E and Control-D to move up and down the list from any application.\n";
+            mstring += "Use Control-E and Control-D to move up and down the list from any application. That item will be copied into the buffer automatically. You can also do this with the mouse with a single click. To remove the currently selected item, use Control-B. or the remove button.\n";
             mstring += "\nWhen the \"Copy clicked item to buffer and remove\" is checked, an item once clicked on is copied to buffer and is then removed. ";
             mstring += "Use the clear button to remove all items and the remove button to remove the selected items. Multiple items can be selected using the mouse and either the shift or control key. ";
             mstring += "Then use the \"Paste Multiple\" button to copy all the selected items to the buffer. When the \"Use stack\" box is checked, it will be copied from bottom to top. Otherwise, it will be copied from top to bottom.\n";
