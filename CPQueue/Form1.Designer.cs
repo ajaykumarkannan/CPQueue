@@ -131,8 +131,8 @@ namespace CPQueue
             // 
             this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.settingsToolStripMenuItem,
-            this.exportToolStripMenuItem,
             this.importToolStripMenuItem,
+            this.exportToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
             this.optionsToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
