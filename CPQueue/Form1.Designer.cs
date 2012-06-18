@@ -218,7 +218,7 @@ namespace CPQueue
             // 
             this.label2.Location = new System.Drawing.Point(9, 253);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(302, 32);
+            this.label2.Size = new System.Drawing.Size(382, 32);
             this.label2.TabIndex = 15;
             this.label2.Text = "Shortcuts: Ctrl-B: Delete selected, Ctrl-E: Move up, Ctrl-D: Move Down";
             // 
@@ -235,7 +235,7 @@ namespace CPQueue
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(289, 230);
+            this.button2.Location = new System.Drawing.Point(412, 197);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(88, 27);
             this.button2.TabIndex = 17;
@@ -246,7 +246,7 @@ namespace CPQueue
             // checkBox3
             // 
             this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(397, 235);
+            this.checkBox3.Location = new System.Drawing.Point(405, 230);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(118, 19);
             this.checkBox3.TabIndex = 18;
@@ -257,7 +257,7 @@ namespace CPQueue
             // checkBox4
             // 
             this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(397, 260);
+            this.checkBox4.Location = new System.Drawing.Point(405, 252);
             this.checkBox4.Name = "checkBox4";
             this.checkBox4.Size = new System.Drawing.Size(128, 19);
             this.checkBox4.TabIndex = 19;
@@ -268,7 +268,7 @@ namespace CPQueue
             // splitBox
             // 
             this.splitBox.AutoSize = true;
-            this.splitBox.Location = new System.Drawing.Point(289, 265);
+            this.splitBox.Location = new System.Drawing.Point(311, 230);
             this.splitBox.Name = "splitBox";
             this.splitBox.Size = new System.Drawing.Size(80, 19);
             this.splitBox.TabIndex = 20;
@@ -294,7 +294,7 @@ namespace CPQueue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(535, 292);
+            this.ClientSize = new System.Drawing.Size(535, 273);
             this.Controls.Add(this.miniMode);
             this.Controls.Add(this.splitBox);
             this.Controls.Add(this.checkBox4);

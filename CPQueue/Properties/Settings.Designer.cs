@@ -94,5 +94,17 @@ namespace CPQueue.Properties {
                 this["mini"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool mainScreenOptions {
+            get {
+                return ((bool)(this["mainScreenOptions"]));
+            }
+            set {
+                this["mainScreenOptions"] = value;
+            }
+        }
     }
 }

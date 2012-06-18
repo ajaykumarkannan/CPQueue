@@ -479,11 +479,12 @@ namespace CPQueue
 
         private void optionsToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            OptForm optionsForm = new OptForm();
+            optionsForm.ShowDialog();
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-
         }
     }
 }
