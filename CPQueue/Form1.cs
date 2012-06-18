@@ -81,6 +81,7 @@ namespace CPQueue
         }
 
 
+        /*
         // Clear Button
         private void button1_Click(object sender, EventArgs e)
         {
@@ -90,6 +91,7 @@ namespace CPQueue
             selectedItem = 0;
 
         }
+        */
 
         protected override void WndProc(ref System.Windows.Forms.Message m)
         {
@@ -109,7 +111,7 @@ namespace CPQueue
                             listView1.Items.RemoveAt(selectedItem);
                             if (listView1.Items.Count > 0)
                             {
-                                if (!checkBox2.Checked)
+                                if (!(bool)CPQueue.Properties.Settings.Default["stack"])
                                 {
                                     if (selectedItem >= listView1.Items.Count - 1) selectedItem = listView1.Items.Count - 1;
                                 }
@@ -209,7 +211,7 @@ namespace CPQueue
 
                             listView1.Items[selectedItem].Selected = false;
 
-                            if (!checkBox2.Checked)
+                            if (!(bool)CPQueue.Properties.Settings.Default["stack"])
                             {
                                 selectedItem = 0;
                                 loadItem();
@@ -247,7 +249,7 @@ namespace CPQueue
                 }
                 if (listView1.Items.Count > 0)
                 {
-                    if (!checkBox2.Checked) selectedItem = 0;
+                    if (!((bool)CPQueue.Properties.Settings.Default["stack"])) selectedItem = 0;
                     else selectedItem = listView1.Items.Count - 1;
                     loadItem();
                 }
@@ -261,12 +263,22 @@ namespace CPQueue
             helpForm.ShowDialog();
         }
 
+        // Use stack instead of queue checkbox
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
-            if(listView1.Items.Count > 0) listView1.Items[selectedItem].Selected = false; 
+            if(listView1.Items.Count > 0) listView1.Items[selectedItem].Selected = false;
 
-            if (checkBox2.Checked) selectedItem = listView1.Items.Count - 1;
-            else selectedItem = 0;
+            if (checkBox2.Checked)
+            {
+                selectedItem = listView1.Items.Count - 1;
+                CPQueue.Properties.Settings.Default["stack"] = true;
+            }
+            else
+            {
+                selectedItem = 0;
+                CPQueue.Properties.Settings.Default["stack"] = false;
+            }
+
             loadItem();
 
         }
@@ -288,7 +300,7 @@ namespace CPQueue
         private void button2_Click(object sender, EventArgs e)
         {
             mstring = "";
-            if (checkBox2.Checked)
+            if((bool) CPQueue.Properties.Settings.Default["stack"])
             {
                 for (int i = listView1.Items.Count - 1; i >= 0; i--)
                 {
@@ -396,7 +408,7 @@ namespace CPQueue
                         }
                     }
 
-                    if (!checkBox2.Checked)
+                    if (!(bool)CPQueue.Properties.Settings.Default["stack"])
                     {
                         selectedItem = 0;
                         loadItem();
@@ -423,7 +435,6 @@ namespace CPQueue
                 checkBox3.Hide();
                 checkBox4.Hide();
                 label2.Hide();
-                button1.Hide();
                 button2.Hide();
                 button3.Hide();
                 splitBox.Hide();
@@ -445,7 +456,6 @@ namespace CPQueue
                 checkBox3.Show();
                 checkBox4.Show();
                 label2.Show();
-                button1.Show();
                 button2.Show();
                 button3.Show();
                 splitBox.Show();
@@ -465,6 +475,15 @@ namespace CPQueue
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void optionsToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

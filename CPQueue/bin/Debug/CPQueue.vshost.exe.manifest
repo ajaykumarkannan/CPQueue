@@ -42,24 +42,24 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CPQueue.exe" size="26112">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CPQueue.exe" size="28160">
       <assemblyIdentity name="CPQueue" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Qz7/wFtCbXYCWNqscfFTDKqxXPcrVSsPaQ/tlx4hNUE=</dsig:DigestValue>
+        <dsig:DigestValue>rsXunYOCFpDqvys+1zMtnN3uPVmxHTA+gVWVxZVQueI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="CPQueue.exe.config" size="187">
+  <file name="CPQueue.exe.config" size="1517">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>xm4bo26HQ0LNVwz1vdPYtzhkpMnp2AI5i+f0b+OahTI=</dsig:DigestValue>
+      <dsig:DigestValue>+z7v3y7rJO4m0yG4A3c6payfqf8LX017yWS7Q6dXTlE=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>
