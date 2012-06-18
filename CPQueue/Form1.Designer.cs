@@ -56,7 +56,7 @@ namespace CPQueue
         private void InitializeComponent()
         {
             this.listView1 = new System.Windows.Forms.ListView();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.copyRemoveBox = new System.Windows.Forms.CheckBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -70,11 +70,11 @@ namespace CPQueue
             this.viewHelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button3 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.helpLabel = new System.Windows.Forms.Label();
+            this.stackBox = new System.Windows.Forms.CheckBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.spaceBox = new System.Windows.Forms.CheckBox();
+            this.newlineBox = new System.Windows.Forms.CheckBox();
             this.splitBox = new System.Windows.Forms.CheckBox();
             this.saveFD = new System.Windows.Forms.SaveFileDialog();
             this.openFD = new System.Windows.Forms.OpenFileDialog();
@@ -96,16 +96,16 @@ namespace CPQueue
             this.listView1.View = System.Windows.Forms.View.Details;
             this.listView1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.myListview_MouseDown);
             // 
-            // checkBox1
+            // copyRemoveBox
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(12, 205);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(236, 19);
-            this.checkBox1.TabIndex = 9;
-            this.checkBox1.Text = "Copy clicked item to buffer and remove";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.copyRemoveBox.AutoSize = true;
+            this.copyRemoveBox.Location = new System.Drawing.Point(12, 205);
+            this.copyRemoveBox.Name = "copyRemoveBox";
+            this.copyRemoveBox.Size = new System.Drawing.Size(236, 19);
+            this.copyRemoveBox.TabIndex = 9;
+            this.copyRemoveBox.Text = "Copy clicked item to buffer and remove";
+            this.copyRemoveBox.UseVisualStyleBackColor = true;
+            this.copyRemoveBox.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // menuStrip1
             // 
@@ -206,7 +206,7 @@ namespace CPQueue
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(289, 197);
+            this.button3.Location = new System.Drawing.Point(312, 197);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(117, 27);
             this.button3.TabIndex = 14;
@@ -214,28 +214,28 @@ namespace CPQueue
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // label2
+            // helpLabel
             // 
-            this.label2.Location = new System.Drawing.Point(9, 253);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(382, 32);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "Shortcuts: Ctrl-B: Delete selected, Ctrl-E: Move up, Ctrl-D: Move Down";
+            this.helpLabel.Location = new System.Drawing.Point(9, 253);
+            this.helpLabel.Name = "helpLabel";
+            this.helpLabel.Size = new System.Drawing.Size(382, 32);
+            this.helpLabel.TabIndex = 15;
+            this.helpLabel.Text = "Shortcuts: Ctrl-B: Delete selected, Ctrl-E: Move up, Ctrl-D: Move Down";
             // 
-            // checkBox2
+            // stackBox
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(12, 231);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(215, 19);
-            this.checkBox2.TabIndex = 16;
-            this.checkBox2.Text = "Tick to Use Stack instead of Queue";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            this.stackBox.AutoSize = true;
+            this.stackBox.Location = new System.Drawing.Point(12, 231);
+            this.stackBox.Name = "stackBox";
+            this.stackBox.Size = new System.Drawing.Size(215, 19);
+            this.stackBox.TabIndex = 16;
+            this.stackBox.Text = "Tick to Use Stack instead of Queue";
+            this.stackBox.UseVisualStyleBackColor = true;
+            this.stackBox.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(412, 197);
+            this.button2.Location = new System.Drawing.Point(435, 197);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(88, 27);
             this.button2.TabIndex = 17;
@@ -243,27 +243,27 @@ namespace CPQueue
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // checkBox3
+            // spaceBox
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(405, 230);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(118, 19);
-            this.checkBox3.TabIndex = 18;
-            this.checkBox3.Text = "Space Separator";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
+            this.spaceBox.AutoSize = true;
+            this.spaceBox.Location = new System.Drawing.Point(405, 230);
+            this.spaceBox.Name = "spaceBox";
+            this.spaceBox.Size = new System.Drawing.Size(118, 19);
+            this.spaceBox.TabIndex = 18;
+            this.spaceBox.Text = "Space Separator";
+            this.spaceBox.UseVisualStyleBackColor = true;
+            this.spaceBox.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
             // 
-            // checkBox4
+            // newlineBox
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(405, 252);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(128, 19);
-            this.checkBox4.TabIndex = 19;
-            this.checkBox4.Text = "Newline Separator";
-            this.checkBox4.UseVisualStyleBackColor = true;
-            this.checkBox4.CheckedChanged += new System.EventHandler(this.checkBox4_CheckedChanged);
+            this.newlineBox.AutoSize = true;
+            this.newlineBox.Location = new System.Drawing.Point(405, 252);
+            this.newlineBox.Name = "newlineBox";
+            this.newlineBox.Size = new System.Drawing.Size(128, 19);
+            this.newlineBox.TabIndex = 19;
+            this.newlineBox.Text = "Newline Separator";
+            this.newlineBox.UseVisualStyleBackColor = true;
+            this.newlineBox.CheckedChanged += new System.EventHandler(this.checkBox4_CheckedChanged);
             // 
             // splitBox
             // 
@@ -274,6 +274,7 @@ namespace CPQueue
             this.splitBox.TabIndex = 20;
             this.splitBox.Text = "Split Copy";
             this.splitBox.UseVisualStyleBackColor = true;
+            this.splitBox.CheckedChanged += new System.EventHandler(this.splitBox_CheckedChanged);
             // 
             // openFD
             // 
@@ -297,13 +298,13 @@ namespace CPQueue
             this.ClientSize = new System.Drawing.Size(535, 273);
             this.Controls.Add(this.miniMode);
             this.Controls.Add(this.splitBox);
-            this.Controls.Add(this.checkBox4);
-            this.Controls.Add(this.checkBox3);
+            this.Controls.Add(this.newlineBox);
+            this.Controls.Add(this.spaceBox);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.stackBox);
+            this.Controls.Add(this.helpLabel);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.copyRemoveBox);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -322,7 +323,7 @@ namespace CPQueue
         #endregion
 
         private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox copyRemoveBox;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem optionsToolStripMenuItem;
         private ToolStripMenuItem settingsToolStripMenuItem;
@@ -330,11 +331,11 @@ namespace CPQueue
         private ToolStripMenuItem viewHelpToolStripMenuItem;
         private ToolStripMenuItem aboutToolStripMenuItem;
         private Button button3;
-        private Label label2;
-        private CheckBox checkBox2;
+        private Label helpLabel;
+        private CheckBox stackBox;
         private Button button2;
-        private CheckBox checkBox3;
-        private CheckBox checkBox4;
+        private CheckBox spaceBox;
+        private CheckBox newlineBox;
         private CheckBox splitBox;
         private ToolStripMenuItem exportToolStripMenuItem;
         private ToolStripMenuItem textToolStripMenuItem;

@@ -88,6 +88,7 @@
             this.spaceBox.TabIndex = 4;
             this.spaceBox.Text = "Space Separator";
             this.spaceBox.UseVisualStyleBackColor = true;
+            this.spaceBox.CheckedChanged += new System.EventHandler(this.spaceBox_CheckedChanged);
             // 
             // newlineBox
             // 
@@ -98,6 +99,7 @@
             this.newlineBox.TabIndex = 5;
             this.newlineBox.Text = "Newline Separator";
             this.newlineBox.UseVisualStyleBackColor = true;
+            this.newlineBox.CheckedChanged += new System.EventHandler(this.newlineBox_CheckedChanged);
             // 
             // saveButton
             // 

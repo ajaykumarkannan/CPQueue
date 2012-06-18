@@ -104,12 +104,23 @@ namespace CPQueue
                 CPQueue.Properties.Settings.Default["newline"] = false;
             }
 
+            this.DialogResult = DialogResult.OK;
             this.Close();
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.DialogResult = DialogResult.Cancel;
+        }
+
+        private void spaceBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (spaceBox.Checked) newlineBox.Checked = false;
+        }
+
+        private void newlineBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (newlineBox.Checked) spaceBox.Checked = false;
         }
     }
 }
