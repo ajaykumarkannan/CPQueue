@@ -1,3 +1,7 @@
+Bugs:
+On click to remove, it highlights random item...
+Handle up and down
+
 Add multiline in listview. 
 Custom Shortcuts
 Custom delimiters

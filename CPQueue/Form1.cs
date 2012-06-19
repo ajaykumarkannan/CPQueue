@@ -49,9 +49,10 @@ namespace CPQueue
             RegisterHotKey(this.Handle, this.GetType().GetHashCode(), 2, (int)'E');
             RegisterHotKey(this.Handle, this.GetType().GetHashCode(), 2, (int)'D');
             // UnregisterHotKey(this.Handle, this.GetType().GetHashCode());
-            checkBox2.Checked = true;
             screenRectangle = System.Windows.Forms.Screen.PrimaryScreen.WorkingArea;
             this.Location = new Point(screenRectangle.Width - this.Width, screenRectangle.Height - this.Height);
+
+            checkMainBox();
         }
 
         void myListview_MouseDown(Object sender, MouseEventArgs e)
@@ -63,15 +64,7 @@ namespace CPQueue
                 {
                     ListViewHitTestInfo htInfo = listView1.HitTest(e.X, e.Y);
                     mstring = htInfo.Item.Text;
-                    Clipboard.SetData(DataFormats.Text, (Object)mstring);
-                    if (checkBox1.Checked && listView1.Items.Count > 0)
-                    {
-                        listView1.Items.RemoveAt(htInfo.Item.Index);
-                    }
-                    else
-                    {
-                        selectedItem = htInfo.Item.Index;
-                    }
+                    selectedItem = htInfo.Item.Index;
                 }
                 catch (NullReferenceException)
                 {
@@ -80,7 +73,7 @@ namespace CPQueue
             }
         }
 
-
+        /*
         // Clear Button
         private void button1_Click(object sender, EventArgs e)
         {
@@ -90,6 +83,7 @@ namespace CPQueue
             selectedItem = 0;
 
         }
+        */
 
         protected override void WndProc(ref System.Windows.Forms.Message m)
         {
@@ -109,7 +103,7 @@ namespace CPQueue
                             listView1.Items.RemoveAt(selectedItem);
                             if (listView1.Items.Count > 0)
                             {
-                                if (!checkBox2.Checked)
+                                if (!(bool)CPQueue.Properties.Settings.Default["stack"])
                                 {
                                     if (selectedItem >= listView1.Items.Count - 1) selectedItem = listView1.Items.Count - 1;
                                 }
@@ -127,6 +121,7 @@ namespace CPQueue
                         if (selectedItem > 0 && selectedItem < listView1.Items.Count)
                         {
                             listView1.Items[selectedItem].Selected = false;
+                            listView1.Items[selectedItem].Focused = false;
                             selectedItem--;
                             loadItem();
                         }
@@ -136,6 +131,7 @@ namespace CPQueue
                         if (selectedItem >=0 && selectedItem < listView1.Items.Count - 1)
                         {
                             listView1.Items[selectedItem].Selected = false;
+                            listView1.Items[selectedItem].Focused = false;
                             selectedItem++;
 
                             loadItem();
@@ -176,11 +172,11 @@ namespace CPQueue
                         {
                             // Default delimiter \r\n
 
-                            if (splitBox.Checked)
+                            if ((bool)CPQueue.Properties.Settings.Default["splitCopy"])
                             {
                                 string[] substrings;
 
-                                if (!checkBox3.Checked)
+                                if (!(bool)CPQueue.Properties.Settings.Default["space"])
                                 {
                                     substrings = Regex.Split(mstring, "\r\n");
                                 }
@@ -208,8 +204,9 @@ namespace CPQueue
                             }
 
                             listView1.Items[selectedItem].Selected = false;
+                            listView1.Items[selectedItem].Focused = false;
 
-                            if (!checkBox2.Checked)
+                            if (!(bool)CPQueue.Properties.Settings.Default["stack"])
                             {
                                 selectedItem = 0;
                                 loadItem();
@@ -247,7 +244,7 @@ namespace CPQueue
                 }
                 if (listView1.Items.Count > 0)
                 {
-                    if (!checkBox2.Checked) selectedItem = 0;
+                    if (!((bool)CPQueue.Properties.Settings.Default["stack"])) selectedItem = 0;
                     else selectedItem = listView1.Items.Count - 1;
                     loadItem();
                 }
@@ -261,12 +258,26 @@ namespace CPQueue
             helpForm.ShowDialog();
         }
 
+        // Use stack instead of queue checkbox
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
-            if(listView1.Items.Count > 0) listView1.Items[selectedItem].Selected = false; 
+            if (listView1.Items.Count > 0)
+            {
+                listView1.Items[selectedItem].Selected = false;
+                listView1.Items[selectedItem].Focused = false;
+            }
 
-            if (checkBox2.Checked) selectedItem = listView1.Items.Count - 1;
-            else selectedItem = 0;
+            if (stackBox.Checked)
+            {
+                selectedItem = listView1.Items.Count - 1;
+                CPQueue.Properties.Settings.Default["stack"] = true;
+            }
+            else
+            {
+                selectedItem = 0;
+                CPQueue.Properties.Settings.Default["stack"] = false;
+            }
+
             loadItem();
 
         }
@@ -280,6 +291,7 @@ namespace CPQueue
                 mstring = listView1.Items[selectedItem].Text;
                 Clipboard.SetData(DataFormats.Text, (Object)mstring);
                 listView1.Items[selectedItem].Selected = true;
+                listView1.Items[selectedItem].Focused = true;
                 listView1.EnsureVisible(selectedItem);
             }
             else selectedItem = 0;
@@ -288,15 +300,15 @@ namespace CPQueue
         private void button2_Click(object sender, EventArgs e)
         {
             mstring = "";
-            if (checkBox2.Checked)
+            if((bool) CPQueue.Properties.Settings.Default["stack"])
             {
                 for (int i = listView1.Items.Count - 1; i >= 0; i--)
                 {
                     if (listView1.Items[i].Selected)
                     {
                         mstring += listView1.Items[i].Text;
-                        if (checkBox3.Checked) mstring += " ";
-                        if (checkBox4.Checked) mstring += "\n";
+                        if ((bool)CPQueue.Properties.Settings.Default["space"]) mstring += " ";
+                        if ((bool)CPQueue.Properties.Settings.Default["newline"]) mstring += "\n";
                     }
                 }
             }
@@ -307,8 +319,8 @@ namespace CPQueue
                     if (listView1.Items[i].Selected)
                     {
                         mstring += listView1.Items[i].Text;
-                        if (checkBox3.Checked) mstring += " ";
-                        if (checkBox4.Checked) mstring += "\n";
+                        if ((bool)CPQueue.Properties.Settings.Default["space"]) mstring += " ";
+                        if ((bool)CPQueue.Properties.Settings.Default["newline"]) mstring += "\n";
                     }
                 }
             }
@@ -317,14 +329,34 @@ namespace CPQueue
             
         }
 
+        // Space separator
         private void checkBox3_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox3.Checked) checkBox4.Checked = false;
+            if (spaceBox.Checked)
+            {
+                CPQueue.Properties.Settings.Default["space"] = true;
+                CPQueue.Properties.Settings.Default["newline"] = false;
+                newlineBox.Checked = false;
+            }
+            else
+            {
+                CPQueue.Properties.Settings.Default["space"] = false;
+            }
         }
 
+        // Newline separator
         private void checkBox4_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox4.Checked) checkBox3.Checked = false;
+            if (newlineBox.Checked)
+            {
+                CPQueue.Properties.Settings.Default["space"] = false;
+                CPQueue.Properties.Settings.Default["newline"] = true;
+                spaceBox.Checked = false;
+            }
+            else
+            {
+                CPQueue.Properties.Settings.Default["newline"] = false;
+            }
         }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -396,7 +428,7 @@ namespace CPQueue
                         }
                     }
 
-                    if (!checkBox2.Checked)
+                    if (!(bool)CPQueue.Properties.Settings.Default["stack"])
                     {
                         selectedItem = 0;
                         loadItem();
@@ -414,57 +446,131 @@ namespace CPQueue
             }
         }
 
+        private void enableMiniMode()
+        {
+            CPQueue.Properties.Settings.Default["mini"] = true;
+            stackBox.Hide();
+            spaceBox.Hide();
+            newlineBox.Hide();
+            helpLabel.Hide();
+            button2.Hide();
+            button3.Hide();
+            splitBox.Hide();
+            menuStrip1.Hide();
+            miniMode.Location = new Point(0, 0);
+            listView1.Columns[0].Width = 125;
+            listView1.Columns[1].Width = 0;
+            listView1.Width = 150;
+            listView1.Height = 150;
+            listView1.Location = new Point(0, 20);
+            this.Width = 150;
+            this.Height = 200;
+            this.Location = new Point(screenRectangle.Width - this.Width, screenRectangle.Height - this.Height);
+        }
+
+        private void disableMiniMode()
+        {
+            CPQueue.Properties.Settings.Default["mini"] = false;
+            button2.Show();
+            button3.Show();
+            menuStrip1.Show();
+            miniMode.Location = new Point(440, 2);
+            listView1.Columns[0].Width = itemSize;
+            listView1.Columns[1].Width = timeSize;
+            listView1.Width = 513;
+            listView1.Height = 170;
+            listView1.Location = new Point(12, 27);
+
+            if ((bool)CPQueue.Properties.Settings.Default["mainScreenOptions"])
+            {
+                stackBox.Show();
+                spaceBox.Show();
+                splitBox.Show();
+                spaceBox.Show();
+                newlineBox.Show();
+                helpLabel.Show();
+
+                this.Width = 551;
+                this.Height = 330;
+            }
+            else
+            {
+                stackBox.Hide();
+                spaceBox.Hide();
+                splitBox.Hide();
+                spaceBox.Hide();
+                newlineBox.Hide();
+                helpLabel.Hide();
+
+                this.Width = 551;
+                this.Height = 270;
+            }
+
+            this.Location = new Point(screenRectangle.Width - this.Width, screenRectangle.Height - this.Height);
+        }
+
         private void miniMode_CheckedChanged(object sender, EventArgs e)
         {
             if (miniMode.Checked)
             {
-                checkBox1.Hide();
-                checkBox2.Hide();
-                checkBox3.Hide();
-                checkBox4.Hide();
-                label2.Hide();
-                button1.Hide();
-                button2.Hide();
-                button3.Hide();
-                splitBox.Hide();
-                menuStrip1.Hide();
-                miniMode.Location = new Point(0, 0);
-                listView1.Columns[0].Width = 125;
-                listView1.Columns[1].Width = 0;
-                listView1.Width = 150;
-                listView1.Height = 150;
-                listView1.Location = new Point(0, 20);
-                this.Width = 150;
-                this.Height = 200;
-                this.Location = new Point(screenRectangle.Width - this.Width, screenRectangle.Height - this.Height);
+                enableMiniMode();
             }
             else
             {
-                checkBox1.Show();
-                checkBox2.Show();
-                checkBox3.Show();
-                checkBox4.Show();
-                label2.Show();
-                button1.Show();
-                button2.Show();
-                button3.Show();
-                splitBox.Show();
-                menuStrip1.Show();
-                miniMode.Location = new Point(440, 2);
-                listView1.Columns[0].Width = itemSize;
-                listView1.Columns[1].Width = timeSize;
-                listView1.Width = 513;
-                listView1.Height = 170;
-                listView1.Location = new Point(12, 27);
-                this.Width = 551;
-                this.Height = 330;
-                this.Location = new Point(screenRectangle.Width - this.Width, screenRectangle.Height - this.Height);
+                disableMiniMode();
             }
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void optionsToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            OptForm optionsForm = new OptForm();
+            if (optionsForm.ShowDialog() == DialogResult.OK)
+            {
+                checkMainBox();
+            }
+        }
+
+        private void checkMainBox()
+        {
+            if ((bool)CPQueue.Properties.Settings.Default["mini"])
+            {
+                miniMode.Checked = true;
+                enableMiniMode();
+            }
+            else
+            {
+                miniMode.Checked = false;
+                disableMiniMode();
+            } 
+
+            if ((bool)CPQueue.Properties.Settings.Default["stack"]) stackBox.Checked = true;
+            else stackBox.Checked = false;
+
+
+            if ((bool)CPQueue.Properties.Settings.Default["splitCopy"]) splitBox.Checked = true;
+            else splitBox.Checked = false;
+
+            if ((bool)CPQueue.Properties.Settings.Default["space"]) spaceBox.Checked = true;
+            else spaceBox.Checked = false;
+
+            if ((bool)CPQueue.Properties.Settings.Default["newline"]) newlineBox.Checked = true;
+            else newlineBox.Checked = false;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void splitBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (splitBox.Checked) CPQueue.Properties.Settings.Default["splitCopy"] = true;
+            else CPQueue.Properties.Settings.Default["splitCopy"] = false;
         }
     }
 }
