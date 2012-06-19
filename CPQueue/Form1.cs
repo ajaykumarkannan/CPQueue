@@ -65,11 +65,12 @@ namespace CPQueue
                     ListViewHitTestInfo htInfo = listView1.HitTest(e.X, e.Y);
                     mstring = htInfo.Item.Text;
                     selectedItem = htInfo.Item.Index;
-                    if(listview1.Items.Count > 0) {
-			selectedItem = htInfo.Item.Index;
-			
-                    Clipboard.SetData(DataFormats.Text, (Object)mstring);
-			}
+                    if (listView1.Items.Count > 0)
+                    {
+                        selectedItem = htInfo.Item.Index;
+
+                        Clipboard.SetData(DataFormats.Text, (Object)mstring);
+                    }
                 }
                 catch (NullReferenceException)
                 {
@@ -77,19 +78,6 @@ namespace CPQueue
                 }
             }
         }
-
-
-        /*
-        // Clear Button
-        private void button1_Click(object sender, EventArgs e)
-        {
-            listView1.Clear();
-            this.listView1.Columns.Add("Text", 400);
-            this.listView1.Columns.Add("Added", 80);
-            selectedItem = 0;
-
-        }
-        */
 
         protected override void WndProc(ref System.Windows.Forms.Message m)
         {
@@ -267,15 +255,11 @@ namespace CPQueue
         // Use stack instead of queue checkbox
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
-<<<<<<< HEAD
             if (listView1.Items.Count > 0)
             {
                 listView1.Items[selectedItem].Selected = false;
                 listView1.Items[selectedItem].Focused = false;
             }
-=======
-            if(listView1.Items.Count > 0) listView1.Items[selectedItem].Selected = false;
->>>>>>> 7e6e9cf5f3f5d31d720af6c7748a7d03702361da
 
             if (stackBox.Checked)
             {
@@ -459,10 +443,7 @@ namespace CPQueue
         private void enableMiniMode()
         {
             CPQueue.Properties.Settings.Default["mini"] = true;
-<<<<<<< HEAD
-=======
-            copyRemoveBox.Hide();
->>>>>>> 7e6e9cf5f3f5d31d720af6c7748a7d03702361da
+
             stackBox.Hide();
             spaceBox.Hide();
             newlineBox.Hide();
@@ -499,10 +480,6 @@ namespace CPQueue
             {
                 stackBox.Show();
                 spaceBox.Show();
-<<<<<<< HEAD
-=======
-                copyRemoveBox.Show();
->>>>>>> 7e6e9cf5f3f5d31d720af6c7748a7d03702361da
                 splitBox.Show();
                 spaceBox.Show();
                 newlineBox.Show();
@@ -515,10 +492,6 @@ namespace CPQueue
             {
                 stackBox.Hide();
                 spaceBox.Hide();
-<<<<<<< HEAD
-=======
-                copyRemoveBox.Hide();
->>>>>>> 7e6e9cf5f3f5d31d720af6c7748a7d03702361da
                 splitBox.Hide();
                 spaceBox.Hide();
                 newlineBox.Hide();
@@ -573,11 +546,6 @@ namespace CPQueue
             if ((bool)CPQueue.Properties.Settings.Default["stack"]) stackBox.Checked = true;
             else stackBox.Checked = false;
 
-<<<<<<< HEAD
-=======
-            if ((bool)CPQueue.Properties.Settings.Default["copyRemove"]) copyRemoveBox.Checked = true;
-            else copyRemoveBox.Checked = false;
->>>>>>> 7e6e9cf5f3f5d31d720af6c7748a7d03702361da
 
             if ((bool)CPQueue.Properties.Settings.Default["splitCopy"]) splitBox.Checked = true;
             else splitBox.Checked = false;
@@ -589,16 +557,6 @@ namespace CPQueue
             else newlineBox.Checked = false;
         }
 
-<<<<<<< HEAD
-=======
-        // Copy and Remove Box
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            if (copyRemoveBox.Checked) CPQueue.Properties.Settings.Default["copyRemove"] = true;
-            else CPQueue.Properties.Settings.Default["copyRemove"] = false;
-        }
-
->>>>>>> 7e6e9cf5f3f5d31d720af6c7748a7d03702361da
         private void Form1_Load(object sender, EventArgs e)
         {
 
