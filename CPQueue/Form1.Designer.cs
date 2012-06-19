@@ -204,9 +204,9 @@ namespace CPQueue
             // 
             // helpLabel
             // 
-            this.helpLabel.Location = new System.Drawing.Point(9, 227);
+            this.helpLabel.Location = new System.Drawing.Point(9, 253);
             this.helpLabel.Name = "helpLabel";
-            this.helpLabel.Size = new System.Drawing.Size(206, 44);
+            this.helpLabel.Size = new System.Drawing.Size(382, 32);
             this.helpLabel.TabIndex = 15;
             this.helpLabel.Text = "Shortcuts: Ctrl-B: Delete selected, Ctrl-E: Move up, Ctrl-D: Move Down";
             // 
@@ -256,7 +256,7 @@ namespace CPQueue
             // splitBox
             // 
             this.splitBox.AutoSize = true;
-            this.splitBox.Location = new System.Drawing.Point(312, 230);
+            this.splitBox.Location = new System.Drawing.Point(311, 230);
             this.splitBox.Name = "splitBox";
             this.splitBox.Size = new System.Drawing.Size(80, 19);
             this.splitBox.TabIndex = 20;

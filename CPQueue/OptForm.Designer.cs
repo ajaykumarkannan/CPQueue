@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.stackBox = new System.Windows.Forms.CheckBox();
+
             this.splitCopyBox = new System.Windows.Forms.CheckBox();
             this.showOptionsBox = new System.Windows.Forms.CheckBox();
             this.spaceBox = new System.Windows.Forms.CheckBox();

@@ -48,6 +48,7 @@ namespace CPQueue
                 CPQueue.Properties.Settings.Default["stack"] = false;
             }
 
+
             if (showOptionsBox.Checked)
             {
                 CPQueue.Properties.Settings.Default["mainScreenOptions"] = true;
