@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace CPQueue
 {
-    partial class Form1
+    partial class MainForm
     {
         [DllImport("User32.dll")]
         protected static extern int SetClipboardViewer(int hWndNewViewer);
@@ -55,6 +55,7 @@ namespace CPQueue
 
         private void InitializeComponent()
         {
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.listView1 = new System.Windows.Forms.ListView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();

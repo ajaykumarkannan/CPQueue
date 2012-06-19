@@ -1,3 +1,4 @@
+1.0.1 - Persistent Settings, Remove Clip and Copy, Options Menu
 0.7.4 - Mini Mode & Auto align to lower right corner of Windows
 0.7.3 - Added import and export from text files. Delimiter newline
 0.7.2 - Added split copy
