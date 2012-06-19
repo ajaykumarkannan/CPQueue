@@ -20,7 +20,7 @@ using System.IO;
 
 namespace CPQueue
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
 
         string mstring;
@@ -34,7 +34,7 @@ namespace CPQueue
         int timeSize = 90;
         
         // Constructor
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
             nextClipboardViewer = (IntPtr)SetClipboardViewer((int)this.Handle);
@@ -42,7 +42,6 @@ namespace CPQueue
             this.listView1.Columns.Add("Text", itemSize);
             this.listView1.Columns.Add("Added", timeSize);
             this.listView1.HideSelection = false;
-            
 
             // Alt = 1, Ctrl = 2, Shift = 4, Win = 8
             RegisterHotKey(this.Handle, this.GetType().GetHashCode(), 2, (int)'B');
@@ -54,6 +53,13 @@ namespace CPQueue
 
             checkMainBox();
         }
+
+        private void MainForm_FormClosing(Object sender, FormClosingEventArgs e)
+        {
+            Properties.Settings.Default.Save();
+            
+        }
+
 
         void myListview_MouseDown(Object sender, MouseEventArgs e)
         {
