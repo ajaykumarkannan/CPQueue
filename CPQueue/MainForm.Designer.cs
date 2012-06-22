@@ -87,7 +87,7 @@ namespace CPQueue
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
             this.listView1.LabelEdit = true;
-            this.listView1.Location = new System.Drawing.Point(1, 27);
+            this.listView1.Location = new System.Drawing.Point(12, 27);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(513, 170);
             this.listView1.TabIndex = 8;
@@ -102,7 +102,7 @@ namespace CPQueue
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(514, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(534, 24);
             this.menuStrip1.TabIndex = 12;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -194,7 +194,7 @@ namespace CPQueue
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(301, 197);
+            this.button3.Location = new System.Drawing.Point(312, 197);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(117, 27);
             this.button3.TabIndex = 14;
@@ -204,7 +204,7 @@ namespace CPQueue
             // 
             // helpLabel
             // 
-            this.helpLabel.Location = new System.Drawing.Point(-2, 224);
+            this.helpLabel.Location = new System.Drawing.Point(9, 224);
             this.helpLabel.Name = "helpLabel";
             this.helpLabel.Size = new System.Drawing.Size(218, 40);
             this.helpLabel.TabIndex = 15;
@@ -213,7 +213,7 @@ namespace CPQueue
             // stackBox
             // 
             this.stackBox.AutoSize = true;
-            this.stackBox.Location = new System.Drawing.Point(1, 202);
+            this.stackBox.Location = new System.Drawing.Point(12, 202);
             this.stackBox.Name = "stackBox";
             this.stackBox.Size = new System.Drawing.Size(215, 19);
             this.stackBox.TabIndex = 16;
@@ -223,7 +223,7 @@ namespace CPQueue
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(424, 197);
+            this.button2.Location = new System.Drawing.Point(435, 197);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(88, 27);
             this.button2.TabIndex = 17;
@@ -234,7 +234,7 @@ namespace CPQueue
             // spaceBox
             // 
             this.spaceBox.AutoSize = true;
-            this.spaceBox.Location = new System.Drawing.Point(215, 230);
+            this.spaceBox.Location = new System.Drawing.Point(226, 230);
             this.spaceBox.Name = "spaceBox";
             this.spaceBox.Size = new System.Drawing.Size(118, 19);
             this.spaceBox.TabIndex = 18;
@@ -245,7 +245,7 @@ namespace CPQueue
             // newlineBox
             // 
             this.newlineBox.AutoSize = true;
-            this.newlineBox.Location = new System.Drawing.Point(374, 230);
+            this.newlineBox.Location = new System.Drawing.Point(385, 230);
             this.newlineBox.Name = "newlineBox";
             this.newlineBox.Size = new System.Drawing.Size(128, 19);
             this.newlineBox.TabIndex = 19;
@@ -256,7 +256,7 @@ namespace CPQueue
             // splitBox
             // 
             this.splitBox.AutoSize = true;
-            this.splitBox.Location = new System.Drawing.Point(215, 202);
+            this.splitBox.Location = new System.Drawing.Point(226, 202);
             this.splitBox.Name = "splitBox";
             this.splitBox.Size = new System.Drawing.Size(80, 19);
             this.splitBox.TabIndex = 20;
@@ -271,7 +271,7 @@ namespace CPQueue
             // miniMode
             // 
             this.miniMode.AutoSize = true;
-            this.miniMode.Location = new System.Drawing.Point(429, 2);
+            this.miniMode.Location = new System.Drawing.Point(440, 2);
             this.miniMode.Name = "miniMode";
             this.miniMode.Size = new System.Drawing.Size(85, 19);
             this.miniMode.TabIndex = 21;
@@ -283,7 +283,7 @@ namespace CPQueue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(514, 258);
+            this.ClientSize = new System.Drawing.Size(534, 258);
             this.Controls.Add(this.miniMode);
             this.Controls.Add(this.splitBox);
             this.Controls.Add(this.newlineBox);

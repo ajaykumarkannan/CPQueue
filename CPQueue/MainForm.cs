@@ -475,7 +475,7 @@ namespace CPQueue
             button2.Show();
             button3.Show();
             menuStrip1.Show();
-            miniMode.Location = new Point(429, 2);
+            miniMode.Location = new Point(440, 2);
             listView1.Columns[0].Width = itemSize;
             listView1.Columns[1].Width = timeSize;
             listView1.Width = 513;
@@ -491,7 +491,7 @@ namespace CPQueue
                 newlineBox.Show();
                 helpLabel.Show();
 
-                this.Width = 530;
+                this.Width = 550;
                 this.Height = 296;
             }
             else
@@ -503,7 +503,7 @@ namespace CPQueue
                 newlineBox.Hide();
                 helpLabel.Hide();
 
-                this.Width = 530;
+                this.Width = 556;
                 this.Height = 270;
             }
 
