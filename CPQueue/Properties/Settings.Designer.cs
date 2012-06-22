@@ -94,5 +94,17 @@ namespace CPQueue.Properties {
                 this["mainScreenOptions"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool stayontop {
+            get {
+                return ((bool)(this["stayontop"]));
+            }
+            set {
+                this["stayontop"] = value;
+            }
+        }
     }
 }

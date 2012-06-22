@@ -33,12 +33,23 @@ namespace CPQueue
             else spaceBox.Checked = false;
 
             if ((bool)CPQueue.Properties.Settings.Default["newline"]) newlineBox.Checked = true;
-            else newlineBox.Checked = false; 
+            else newlineBox.Checked = false;
 
+            if ((bool) CPQueue.Properties.Settings.Default["stayontop"]) staytopbox.Checked = true;
+            else staytopbox.Checked = false;
         }
 
         private void saveButton_Click(object sender, EventArgs e)
         {
+            if (staytopbox.Checked)
+            {
+                CPQueue.Properties.Settings.Default["stayontop"] = true;
+            }
+            else
+            {
+                CPQueue.Properties.Settings.Default["stayontop"] = false;
+            }
+
             if (stackBox.Checked)
             {
                 CPQueue.Properties.Settings.Default["stack"] = true;
